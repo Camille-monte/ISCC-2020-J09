@@ -17,7 +17,19 @@
     echo '<a href="http://localhost:8888/ISCC-2020/ISCC-2020-J09/EX_01/mini-site-routing.php?page=admin">Admin</a>';
   }
   ?>
-    </nav>
+  <form enctype="multipart/form-data" action="admin.php" method="post">
+    <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
+    <input name="userfile" type="file" accept="image/x-png,image/jpg,image/jpeg"/>
+    <input name="description" type="text" value="description"/>
+    <input name="titre" type="text" value="text"/>
+    <input type="submit" value="Envoyer le fichier" />
+    
+  </form>
+  
+  <?php
+  
+    echo $_FILES['userfile']['name'];
+  ?>
  
 <?php
 if($_GET['page'] == '1')
